@@ -31,7 +31,7 @@ endif
 all: bin
 .PHONY:all
 
-extlibs$(SLASH)SFML$(SLASH)build:
+SFML$(SLASH)build:
 ifeq ($(OS),Linux)
 	sudo apt update
 	sudo apt install \
@@ -49,7 +49,7 @@ endif
 	cmake -S $(@)$(SLASH).. -B $(@) $(TARGET) -DBUILD_SHARED_LIBS=true
 	$(MAKE) -C $(@)
 
-build: extlibs$(SLASH)SFML$(SLASH)build
+build: SFML$(SLASH)build
 	cmake -S . -B build
 
 bin: build
@@ -62,5 +62,5 @@ run: bin
 .PHONY:run
 
 clean:
-	$(RM) extlibs$(SLASH)SFML$(SLASH)build build bin
+	$(RM) SFML$(SLASH)build build bin
 .PHONY: clean

@@ -7,8 +7,8 @@ endif ()
 
 project(chess_game)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/extlibs/SFML/include/)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/extlibs/SFML/build/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/include/)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/build/lib)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
