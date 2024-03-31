@@ -31,7 +31,10 @@ endif
 all: bin
 .PHONY:all
 
-SFML$(SLASH)build:
+SFML:
+	git clone https://github.com/SFML/SFML.git
+
+SFML$(SLASH)build: SFML
 ifeq ($(OS),Linux)
 	sudo apt update
 	sudo apt install \
