@@ -32,7 +32,7 @@ all: bin
 .PHONY:all
 
 SFML:
-	git clone https://github.com/SFML/SFML.git
+	git clone --branch 2.6.0 https://github.com/SFML/SFML.git
 
 SFML$(SLASH)build: SFML
 ifeq ($(OS),Linux)
@@ -65,5 +65,5 @@ run: bin
 .PHONY:run
 
 clean:
-	$(RM) SFML$(SLASH)build build bin
+	$(RM) SFML build bin
 .PHONY: clean
