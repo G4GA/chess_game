@@ -1,1 +1,0 @@
-/usr/bin/g++-13 CMakeFiles/chess_game.dir/main.cpp.o -o chess_game   -L/home/damian/Desktop/projects/chess_game/extlibs/SFML/build/lib  -Wl,-rpath,/home/damian/Desktop/projects/chess_game/extlibs/SFML/build/lib -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window 

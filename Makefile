@@ -28,7 +28,7 @@ else
     $(error Unsupported operating system: $(OS))
 endif
 
-all: chess_game
+all: bin
 .PHONY:all
 
 extlibs$(SLASH)SFML$(SLASH)build:
@@ -52,14 +52,15 @@ endif
 build: extlibs$(SLASH)SFML$(SLASH)build
 	cmake -S . -B build
 
-chess_game: build
+bin: build
 	$(MAKE) -C .$(SLASH)$(<)$(SLASH)
-	$(MV) .$(SLASH)$(<)$(SLASH)$(@) .
+	$(MKDIR) $(@)
+	$(MV) .$(SLASH)$(<)$(SLASH)chess_game .$(SLASH)$(@)
 
-run: chess_game
-	./chess_game
+run: bin
+	.$(SLASH)$(<)$(SLASH)chess_game
 .PHONY:run
 
 clean:
-	$(RM) extlibs$(SLASH)SFML$(SLASH)build build
+	$(RM) extlibs$(SLASH)SFML$(SLASH)build build bin
 .PHONY: clean

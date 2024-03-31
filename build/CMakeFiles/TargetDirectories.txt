@@ -1,3 +1,0 @@
-/home/damian/Desktop/projects/chess_game/build/CMakeFiles/chess_game.dir
-/home/damian/Desktop/projects/chess_game/build/CMakeFiles/edit_cache.dir
-/home/damian/Desktop/projects/chess_game/build/CMakeFiles/rebuild_cache.dir
