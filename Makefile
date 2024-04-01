@@ -54,20 +54,26 @@ endif
 	$(MAKE) -C $(@)
 
 build: SFML$(SLASH)build
-	cmake -S . -B build
+	cmake -S . -B build $(TARGET)
 
 bin: build
 	$(MAKE) -C .$(SLASH)$(<)$(SLASH)
 	$(MKDIR) $(@)
-	$(MV) .$(SLASH)$(<)$(SLASH)chess_game .$(SLASH)$(@)
+	$(MV) .$(SLASH)$(<)$(SLASH)chess_game$(EXT) .$(SLASH)$(@)
 .PHONY:bin
 
 run:
+ifeq ($(OS), Windows)
+	$(if $(wildcard bin), \
+    @$(MV) .$(SLASH)SFML$(SLASH)build$(SLASH)lib$(SLASH)*.dll bin)
+endif
 	$(if $(wildcard bin), \
     @.$(SLASH)bin$(SLASH)chess_game$(EXT), \
     @echo "Compile bin first")
 .PHONY:run
 
 clean:
-	$(RM) SFML build bin
+	$(RM) SFML
+	$(RM) build
+	$(RM) bin
 .PHONY: clean
