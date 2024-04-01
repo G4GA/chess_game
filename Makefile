@@ -63,7 +63,9 @@ bin: build
 .PHONY:bin
 
 run:
-	.$(SLASH)bin$(SLASH)chess_game
+	$(if $(wildcard bin), \
+    @.$(SLASH)bin$(SLASH)chess_game$(EXT), \
+    @echo "Compile bin first")
 .PHONY:run
 
 clean:
