@@ -47,6 +47,7 @@ ifeq ($(OS),Linux)
 	libgl1-mesa-dev \
 	libegl1-mesa-dev \
 	libdrm-dev \
+	libfreetype-dev \
 	libgbm-dev
 endif
 	cmake -S $(@)$(SLASH).. -B $(@) $(TARGET) -DBUILD_SHARED_LIBS=true
@@ -59,6 +60,7 @@ bin: build
 	$(MAKE) -C .$(SLASH)$(<)$(SLASH)
 	$(MKDIR) $(@)
 	$(MV) .$(SLASH)$(<)$(SLASH)chess_game .$(SLASH)$(@)
+.PHONY:bin
 
 run: bin
 	.$(SLASH)$(<)$(SLASH)chess_game
