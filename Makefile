@@ -62,8 +62,8 @@ bin: build
 	$(MV) .$(SLASH)$(<)$(SLASH)chess_game .$(SLASH)$(@)
 .PHONY:bin
 
-run: bin
-	.$(SLASH)$(<)$(SLASH)chess_game
+run:
+	.$(SLASH)bin$(SLASH)chess_game
 .PHONY:run
 
 clean:

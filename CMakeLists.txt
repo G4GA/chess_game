@@ -7,10 +7,12 @@ endif ()
 
 project(chess_game)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/include/)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/include/ ${CMAKE_CURRENT_SOURCE_DIR}/include)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/build/lib)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}
+                    main.cpp
+                    src/chess_win.cpp)
 
 target_link_libraries(
     ${PROJECT_NAME} PRIVATE
