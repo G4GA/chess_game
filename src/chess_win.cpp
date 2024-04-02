@@ -65,22 +65,13 @@ int ChessWindow::run()
 
 void ChessWindow::drawShapes()
 {
-    sf::Image example_img;
-    sf::Texture example_texture;
-    sf::Sprite example_sprite;
-    example_img.loadFromFile("./dark_bishop.png");
-    example_texture.loadFromImage(example_img);
-    example_texture.setSmooth(false);
-    example_sprite.setTexture(example_texture);
-    example_sprite.setPosition(sf::Vector2f(getPosition(1) + 50, getPosition(1) + 50));
-
     for (size_t i = 0;i < SQUARE_AMOUNT; i ++) {
         window.draw(dark_squares[i]);
         window.draw(light_squares[i]);
     }
+
     window.draw(h_lines);
     window.draw(v_lines);
-    window.draw(example_sprite);
 }
 
 int ChessWindow::eventLoop()
