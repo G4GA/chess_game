@@ -58,7 +58,9 @@ build: SFML$(SLASH)build
 
 bin: build
 	$(MAKE) -C .$(SLASH)$(<)$(SLASH)
+ifeq ($(wildcard bin), )
 	$(MKDIR) $(@)
+endif
 	$(MV) .$(SLASH)$(<)$(SLASH)chess_game$(EXT) .$(SLASH)$(@)
 .PHONY:bin
 
