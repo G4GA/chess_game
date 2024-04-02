@@ -83,7 +83,7 @@ int ChessWindow::eventLoop()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.clear(sf::Color(247, 218, 173));
+        window.clear(sf::Color::White);
         drawShapes();
         window.display();
     }
