@@ -10,7 +10,8 @@
 /*
     This class will handle everything related to the window configuration
 */
-class ChessWindow {
+class ChessWindow
+{
     public:
         ChessWindow(size_t, size_t, std::string);
 
@@ -27,7 +28,7 @@ class ChessWindow {
     //Private methods
         int eventLoop();
         void drawShapes();
-        void init_lines();
-        void init_squares();
+        void initLines();
+        void initSquares();
         size_t getPosition(size_t);
 };
