@@ -13,7 +13,7 @@
 class ChessWindow
 {
     public:
-        ChessWindow(size_t, size_t, std::string);
+        ChessWindow(const size_t&, const size_t&,const std::string&);
 
         int run();
     private:
@@ -30,5 +30,5 @@ class ChessWindow
         void drawShapes();
         void initLines();
         void initSquares();
-        size_t getPosition(size_t);
+        size_t getPosition(const size_t&) const;
 };

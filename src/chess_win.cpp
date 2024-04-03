@@ -1,6 +1,6 @@
 #include "../include/chess_win.hpp"
 
-ChessWindow::ChessWindow(size_t height, size_t width, std::string window_title):
+ChessWindow::ChessWindow(const size_t &height, const size_t &width, const std::string &window_title):
     window(sf::VideoMode(height, width), window_title, sf::Style::Titlebar | sf::Style::Close),
     height(height),
     width(width),
@@ -32,7 +32,7 @@ void ChessWindow::initSquares()
     }
 }
 
-size_t ChessWindow::getPosition(size_t index)
+size_t ChessWindow::getPosition(const size_t &index) const
 {
     return index * (DIMENSION / 8);
 }
