@@ -12,7 +12,8 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/SFML/build/lib)
 
 add_executable(${PROJECT_NAME}
                     main.cpp
-                    src/chess_win.cpp)
+                    src/chess_win.cpp
+                    src/pieces.cpp)
 
 target_link_libraries(
     ${PROJECT_NAME} PRIVATE
