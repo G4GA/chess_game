@@ -1,5 +1,6 @@
 #include <iostream>
 #include <pieces.hpp>
+#include <UT_format.hpp>
 #include <SFML/Graphics.hpp>
 
 class UT_pieces {
@@ -11,7 +12,6 @@ class UT_pieces {
 
 void UT_pieces::run() {
     testPiece = Piece();
-    std::cout << "I'm working!\n";
 }
 
 int main () {

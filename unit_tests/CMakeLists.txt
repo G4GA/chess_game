@@ -7,6 +7,7 @@ function (link RUN_NAME)
 
     include_directories(${RUN_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../SFML/include)
     include_directories(${RUN_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+    include_directories(${RUN_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
     target_link_libraries(${RUN_NAME}
                           PRIVATE
