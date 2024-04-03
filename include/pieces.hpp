@@ -14,7 +14,8 @@ class Piece
         Piece(const Piece&);
         sf::Vector2f getPosition() const;
         void setPosition(const sf::Vector2f&);
-        void setPosition(const float&, const float&);
+        void setPosition(const float &x, const float &y);
+        void setSize (const sf::Vector2f&);
         void setSize (const float&, const float&);
         void setScaleFactor(const float&, const float&);
         void setScaleFactor(const sf::Vector2f&);
