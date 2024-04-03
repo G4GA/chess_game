@@ -16,6 +16,7 @@ ifeq ($(OS),Linux)
 	TARGET :=
     SLASH := /
     EXT :=
+	COPY := cp
 else ifeq ($(OS),Windows)
     MAKE := mingw32-make
     RM := del /Q /S
@@ -75,13 +76,14 @@ endif
     @echo "Compile bin first")
 .PHONY:run
 
+compile_UT: bin
+	@$(MKDIR) unit_tests$(SLASH)bin
+	@$(COPY) build$(SLASH)unit_tests$(SLASH)UT_pieces$(EXT) unit_tests$(SLASH)bin
+.PHONY: compile_UT
+
 run_UT:
-ifeq ($(OS), Windows)
-	$(if $(wildcard unit_tests/bin), \
-    @$(COPY) .$(SLASH)SFML$(SLASH)build$(SLASH)lib$(SLASH)*.dll bin)
-endif
-	$(if $(wildcard unit_tests/bin), \
-    @.$(SLASH)unit_tests$(SLASH)bin$(EXT), \
+	$(if $(wildcard unit_tests$(SLASH)bin), \
+	@.$(SLASH)unit_tests$(SLASH)bin$(SLASH)UT_pieces, \
     @echo "Compile bin first")
 .PHONY: run_UT
 
@@ -89,4 +91,5 @@ clean:
 	$(RM) SFML
 	$(RM) build
 	$(RM) bin
+	$(RM) unit_tests/bin
 .PHONY: clean
