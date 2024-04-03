@@ -1,4 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
+#include <pieces.hpp>
 #include <string>
 
 #define VERTEX_COUNT 14
