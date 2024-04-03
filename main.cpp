@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <chess_win.hpp>
+#include <pieces.hpp>
 
 int main()
 {

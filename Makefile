@@ -24,6 +24,7 @@ else ifeq ($(OS),Windows)
 	TARGET := -G "MinGW Makefiles"
     SLASH := \\
     EXT := .exe
+	COPY:= copy
 else
     $(error Unsupported operating system: $(OS))
 endif
@@ -67,12 +68,22 @@ endif
 run:
 ifeq ($(OS), Windows)
 	$(if $(wildcard bin), \
-    @$(MV) .$(SLASH)SFML$(SLASH)build$(SLASH)lib$(SLASH)*.dll bin)
+    @$(COPY) .$(SLASH)SFML$(SLASH)build$(SLASH)lib$(SLASH)*.dll bin)
 endif
 	$(if $(wildcard bin), \
     @.$(SLASH)bin$(SLASH)chess_game$(EXT), \
     @echo "Compile bin first")
 .PHONY:run
+
+run_UT:
+ifeq ($(OS), Windows)
+	$(if $(wildcard unit_tests/bin), \
+    @$(COPY) .$(SLASH)SFML$(SLASH)build$(SLASH)lib$(SLASH)*.dll bin)
+endif
+	$(if $(wildcard unit_tests/bin), \
+    @.$(SLASH)unit_tests$(SLASH)bin$(EXT), \
+    @echo "Compile bin first")
+.PHONY: run_UT
 
 clean:
 	$(RM) SFML

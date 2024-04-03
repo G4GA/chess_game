@@ -23,3 +23,5 @@ target_link_libraries(
     sfml-system
     sfml-window
 )
+
+add_subdirectory(unit_tests)

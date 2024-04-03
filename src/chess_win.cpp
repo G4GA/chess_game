@@ -7,6 +7,7 @@ ChessWindow::ChessWindow(const size_t &height, const size_t &width, const std::s
     h_lines(sf::Lines, VERTEX_COUNT),
     v_lines(sf::Lines, VERTEX_COUNT)
 {
+    Piece my_piece;
     initLines();
     initSquares();
 }
